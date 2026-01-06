@@ -130,3 +130,5 @@ def save_enriched_data(enriched_transactions, filename="data/enriched_salesdata.
             f.write(line + "\n")
 
     print(f"[API] Enriched data saved to {filename}")
+def fetch_all_products():
+    """Fetch up to 100 products from DummyJSON API and return a list."""

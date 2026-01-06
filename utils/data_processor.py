@@ -1,4 +1,7 @@
 def calculate_total_revenue(transactions):
+   def calculate_total_revenue(transactions):
+    """Return total revenue as sum of quantity * unit price for all transactions."""
+
     """
     Calculates total revenue from all transactions.
     Revenue per transaction = Quantity * UnitPrice

@@ -20,3 +20,7 @@ Python based sales analytics project which reads `sales_data.txt`, applies filte
    - Final report: output/sales_report.txt
 ## testing commits 
 “Technologies used: Python, requests”
+
+## How it works
+
+The program reads raw sales data, cleans it, enriches it using the DummyJSON API, and then generates a text report with multiple summaries.

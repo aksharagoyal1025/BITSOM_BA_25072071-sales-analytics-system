@@ -1,6 +1,7 @@
 # Sales Analytics System
 
 Python based sales analytics project which reads `sales_data.txt`, applies filters, analyzes data, calls a product API, and generates a text report.
+“This project uses the DummyJSON products API (https://dummyjson.com/products) to fetch product data.”
 
 ## Requirements
 

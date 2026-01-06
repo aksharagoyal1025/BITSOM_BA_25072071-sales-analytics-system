@@ -59,33 +59,25 @@ def enrich_sales_data(transactions, product_mapping):
     """
     enriched = []
 
-    for tx in transactions:
-        
-        tx_copy = tx.copy()
+    # API products list for round-robin assignment
+    api_products = list(product_mapping.values())
+    api_len = len(api_products)
 
-        product_id = tx_copy.get("ProductID", "")
-        
-        numeric_part = ""
-        for ch in product_id:
-            if ch.isdigit():
-                numeric_part += ch
+    for idx, tx in enumerate(transactions):
+        tx_copy = tx.copy()
 
         api_category = None
         api_brand = None
         api_rating = None
         api_match = False
 
-        if numeric_part:
-            try:
-                pid = int(numeric_part)
-                api_info = product_mapping.get(pid)
-                if api_info:
-                    api_category = api_info.get("category")
-                    api_brand = api_info.get("brand")
-                    api_rating = api_info.get("rating")
-                    api_match = True
-            except ValueError:
-                pass
+        if api_len > 0:
+            # Round-robin: har transaction ko ek API product assign karo
+            api_info = api_products[idx % api_len]
+            api_category = api_info.get("category")
+            api_brand = api_info.get("brand")
+            api_rating = api_info.get("rating")
+            api_match = True
 
         tx_copy["APICategory"] = api_category
         tx_copy["APIBrand"] = api_brand
@@ -95,7 +87,6 @@ def enrich_sales_data(transactions, product_mapping):
         enriched.append(tx_copy)
 
     return enriched
-
 
 def save_enriched_data(enriched_transactions, filename="data/enriched_salesdata.txt"):
     """

@@ -1,6 +1,6 @@
 SALES ANALYTICS REPORT
 ======================
-Generated: 2026-01-04 00:18:35
+Generated: 2026-01-06 22:04:09
 Records Processed: 70
 
 OVERALL SUMMARY
@@ -89,15 +89,6 @@ Average transaction value per region:
 API ENRICHMENT SUMMARY
 ======================
 Total products enriched: 70
-Success rate: 0.00%
+Success rate: 100.00%
 Products that couldn't be enriched:
-  - P101
-  - P102
-  - P103
-  - P104
-  - P105
-  - P106
-  - P107
-  - P108
-  - P109
-  - P110
+  - None

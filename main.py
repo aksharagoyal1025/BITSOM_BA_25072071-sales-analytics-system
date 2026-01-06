@@ -1,3 +1,4 @@
+# Simple sales analytics project for the Masai Python assignment.
 from utils.file_handler import read_sales_data, parse_transactions, validate_and_filter
 from utils.data_processor import (
     calculate_total_revenue,
